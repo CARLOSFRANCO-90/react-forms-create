@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  background-image: url(./pages/components/imag/AUTO.png);
+  background-size: cover no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

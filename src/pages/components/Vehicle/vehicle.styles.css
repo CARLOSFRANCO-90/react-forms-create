@@ -1,0 +1,9 @@
+td {
+    border: 2px solid gold;
+    background-color: black;
+
+    color: white;
+    width: 30%;
+    margin: 0% auto;
+    padding: 2px;
+}
