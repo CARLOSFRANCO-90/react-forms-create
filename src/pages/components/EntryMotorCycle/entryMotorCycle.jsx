@@ -1,20 +1,18 @@
 import React from 'react';
-import './entry.styles.css';
+import './entryMotorCycle.styles.css';
 
 
-const Entry = (props) => {
-    console.log({props});
-    
+const EntryMotorCycle = (props) => {
     return(
         <React.Fragment key="0">
             {props.entry.map((entry,index)=>{
                 return(
                     <React.Fragment key={entry.id}>
                     <tr>
-                        <td className = "entry" colSpan="2">
-                            Working day: {entry.schedule}
+                        <td className = "entryMotorCycle" colSpan="2">
+                            Working date: {entry.schedule}
                         </td>
-                        <td className = "entry">
+                        <td className = "entryMotorCycle">
                             Hour: {entry.hour}
                         </td>
                     </tr>
@@ -29,4 +27,4 @@ const Entry = (props) => {
     
 }
 
-export default Entry;
+export default EntryMotorCycle;

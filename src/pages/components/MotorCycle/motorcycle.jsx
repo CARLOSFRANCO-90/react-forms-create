@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useState } from "react";
-import OwnerComponent from '../Owner/OwnerComponent';
-import './vehicle.styles.css';
+import './motorcycle.styles.css';
 import Entry from '../Entry/entry';
-let vec = {
-    vehicles: [
+import OwnerMotorCycleComponent from '../OwnerMotorCycle/OwnerMotorCycleComponent';
+import EntryMotorCycle from '../EntryMotorCycle/entryMotorCycle';
+let motcycle = {
+    motorcycles: [
         {
             id: "v1", 
-            brand: "kia", 
-            type: "Carro",
-            plaque:"krr123",
+            brand: "Yaha", 
+            type: "Moto",
+            plaque:"DFG45D",
             owner: {
                     id: "1",
-                    name: "Carlos Franco",
+                    name: "JOSE",
                     cellphone: 3214036681,
             },
             entry:[
@@ -27,17 +28,17 @@ let vec = {
         {
             id: "v2", 
             brand: "honda", 
-            type: "Carro",
-            plaque:"HHD33",
+            type: "Moto",
+            plaque:"krr10",
             owner: {
                     id: "2",
-                    name: "Carlitos",
+                    name: "Usuario 2",
                     cellphone: 3214036666,
             },
             entry:[
                 {
                     id: "e1",
-                    schedule: "Night",
+                    schedule: "night",
                     hour: 20,
                 },
         
@@ -57,66 +58,67 @@ let vec = {
                 {
                     id: "e1",
                     schedule: "Day",
-                    hour: "3",
+                    hour: 3,
                 },
         
             ]
         },
         
     ]
-
 }
 
-const Vehicles = (props) => {
-    const [vehicle, setVehicle] = useState('c1');
+const MotorCycle = (props) => {
+    const [motorcycle, setMotorCycle] = useState('c1');
     const [entrySchedule, setEntrySchedule] = useState('');
 
     const addEntry = () => {
-        console.log('vehicle: ' + vehicle);
+        console.log('motorcycle: ' + motorcycle);
         console.log('entry schedule: ' + entrySchedule);
     }
     return (
         <div>
-            <label>Vehicle:</label>
-                <select value={vehicle} onChange={(event)=> {setVehicle(event.target.value)}} >
-                    <option value="1">Carlos Franco</option>
-                    <option value="2">Pepito</option>
-                    <option value="2">Kata</option>
+            <div className='motorCycleForm'>
+                <label>motorcycle:</label>
+                <select value={motorcycle} onChange={(event)=> {setMotorCycle(event.target.value)}} >
+                    <option value="1">Usuario 1</option>
+                    <option value="2">Usuario 2</option>
                 </select>
-            <label>Schedule:</label>
+                <label>Schedule:</label>
                 <input type='text' value={entrySchedule} onChange={(event)=> {setEntrySchedule(event.target.value)}} />
                 <button type='button' onClick={addEntry}>Add entry</button>
+            </div>
+            
              <table>
                  <tbody>
                      {
 
-                        vec.vehicles.map((vehicle,index)=>{
+                        motcycle.motorcycles.map((motorcycle,index)=>{
                             return (
-                                <React.Fragment key={vehicle.id}>
+                                <React.Fragment key={motorcycle.id}>
                                     <tr>
-                                        <td>
+                                        <td className="data">
                                             brand
                                         </td>
-                                        <td>
+                                        <td className="data">
                                             type
                                         </td>
-                                        <td>
+                                        <td className="data">
                                             plaque
                                         </td>
                                     </tr>
                                 <tr>
-                                    <td>
-                                        {vehicle.brand}
+                                    <td className="data">
+                                        {motorcycle.brand}
                                     </td>
-                                    <td>
-                                        {vehicle.type}
+                                    <td className="data">
+                                        {motorcycle.type}
                                     </td>
-                                    <td>
-                                        {vehicle.plaque}
+                                    <td className="data">
+                                        {motorcycle.plaque}
                                     </td>
                                 </tr>
-                                <OwnerComponent  owner = {vehicle.owner}/>
-                                <Entry entry = {vehicle.entry}/>
+                                <OwnerMotorCycleComponent owner = {motorcycle.owner}/>
+                                <EntryMotorCycle entry = {motorcycle.entry}/>
                                 </React.Fragment>
                             );
                             
@@ -130,4 +132,4 @@ const Vehicles = (props) => {
     );
 }
 
-export default Vehicles;
+export default MotorCycle;

@@ -1,0 +1,16 @@
+.data {
+    border: 2px solid green;
+    background-color: gray;
+    color: white;
+    width: 30%;
+    margin: 0% auto;
+    padding: 2px;
+}
+.motorCycleForm  {
+    text-align: justify;
+    background-color: gray;
+    padding: 15px;
+    width: 500px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
